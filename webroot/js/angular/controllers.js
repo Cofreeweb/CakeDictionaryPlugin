@@ -1,5 +1,5 @@
 
-adminApp.controller( 'DictionariesCtrl', function( $scope, $rootScope, $routeParams, $http, paginationFactory) {
+angular.module( 'adminApp').controller( 'DictionariesCtrl', function( $scope, $rootScope, $routeParams, $http, paginationFactory) {
     var url = paginationFactory.url( '/admin/dictionary/dictionaries/index/' + $routeParams.domain + '.json');
     $http.get( url).success(function( data){
       $scope.nodes = data.nodes;
@@ -12,7 +12,7 @@ adminApp.controller( 'DictionariesCtrl', function( $scope, $rootScope, $routePar
 });
 
 
-adminApp.controller( 'DictionariesEditCtrl', function( $scope, $routeParams, $http) {
+angular.module( 'adminApp').controller( 'DictionariesEditCtrl', function( $scope, $routeParams, $http) {
     $http.get( '/admin/dictionary/dictionaries/edit/' + $routeParams.node + '.json').success(function( data){
       $scope.dictionary = data.dictionary;
     });

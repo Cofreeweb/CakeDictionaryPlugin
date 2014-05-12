@@ -1,4 +1,4 @@
-adminApp.config( ['$routeProvider',
+angular.module( 'adminApp').config( ['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/dictionaries/index/:domain', {
