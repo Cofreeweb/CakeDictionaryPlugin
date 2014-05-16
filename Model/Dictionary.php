@@ -32,7 +32,6 @@ class Dictionary extends DictionaryAppModel
               'Dictionary.domain'
           )
       ));
-      CakeLog::write( 'debug', '************************** After Find .' . count( $records));
       
       $result = Hash::combine( $records,  '{n}.Dictionary.node', '{n}.Dictionary.text', '{n}.Dictionary.domain');
       Cache::write( 'Dictionaries', $records, 'dictionaries');
